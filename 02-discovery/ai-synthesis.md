@@ -6,12 +6,12 @@
 
 ## Responses
 
-- **Moment of misery / red flag #1:** _(not filled in)_
-- **Moment of misery / red flag #2:** _(not filled in)_
-- **Moment of misery / red flag #3:** _(not filled in)_
-- **Product Health & Insights Summary (Claude's output):** _(not filled in)_
-- **Did the AI catch the specific moment of misery / pain point you found in Step 1?:** _(not filled in)_
-- **Did it smooth over a critical frustration into a generic bullet point?:** _(not filled in)_
-- **Did the AI try to suggest features or a roadmap despite the constraints?:** _(not filled in)_
-- **Logic leak / hallucination #1:** _(not filled in)_
-- **Logic leak / hallucination #2:** _(not filled in)_
+- **Moment of misery / red flag #1:** Marking a stop delivered takes three taps across three screens, so drivers text the dispatcher instead. "I tap through three screens. In the rain, at a doorstep, with a package in one hand." (UXR-01; BUG-2055, High)
+- **Moment of misery / red flag #2:** Reassignments take 8–15 minutes to reach the driver, so the WhatsApp group becomes the real system. "We keep a WhatsApp group as the real system." (UXR-02; BUG-2044, Critical)
+- **Moment of misery / red flag #3:** A mid-route crash loses the remaining stops, and the office reads them over the phone. "I had to call the office to read them to me off a screen. Twenty minutes gone." (UXR-03; BUG-2031, Critical)
+- **Product Health & Insights Summary (Claude's output):** An executive summary framed around the tension between technical stability and user experience, followed by five thematic categories: Technical Stability & Offline Resilience; Platform Sync & Real-Time Visibility; Discovery & Interaction Efficiency; Algorithmic Curation; and Product Scope & Adoption Risk. Each category has a narrative and severity-tagged bullets. Low-priority items (BUG-2085, BUG-2090) are aggregated into a single "Minor Technical Debt" line. No roadmap section was included.
+- **Did the AI catch the specific moment of misery / pain point you found in Step 1?:** Yes. The three-tap flow, the reassignment lag, and the crash that loses stops all appear in the output with their bug severities. The lag and the three-tap flow are both captured under the correct categories.
+- **Did it smooth over a critical frustration into a generic bullet point?:** Partly. The Critical items stayed Critical, but the onboarding and failed-delivery reporting problem (UXR-08) was reframed as a Medium synthesized item. The narrative also drops the operational cost of the three-tap flow ("in the rain, with a package in one hand") from the bullet itself. Those are the places where the human detail was flattened.
+- **Did the AI try to suggest features or a roadmap despite the constraints?:** Not in the first synthesis, which followed the no-roadmap constraint. When the follow-up asked for an "Actionable Recommendations" section, it produced three interventions as requested. One of them (intervention 3) lists BUG-2079 (Medium) as a resolved issue, which goes beyond the instruction to base recommendations strictly on Critical and High issues.
+- **Logic leak / hallucination #1:** The recommendations section quotes "I override it every day" as evidence for one-tap completion. That line is from UXR-05, a driver describing route optimization errors, not tap friction. The quote was attached to the wrong problem.
+- **Logic leak / hallucination #2:** The dispatcher workaround analysis (not the synthesis) states that route errors carry costs in "fuel, time, and failed deliveries." The research supports the time cost (UXR-03: "Twenty minutes gone") but contains no evidence for fuel costs or failed-delivery counts. Those claims should be removed or sourced before the deck.
