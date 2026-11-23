@@ -1,17 +1,32 @@
-# Hypothesis & Success Metrics
+# Hypothesis & Success Metrics (Module 3)
 
 > **Module 3 · ★ Deliverable 3.** Repo file `03-analytics/hypothesis-and-metrics.md` — part of your submission.
 > Do the lab in the **Module 3 · Exercise Guide** (linked from the Module 3 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
 > It feeds the **Problem, Value & Hypothesis** slide of your Module 6 final deck.
 
-## Finalized product hypothesis
+## Pre-work · Hypothesis check
 
-> Based on [qual + quant evidence], I believe that [solving X] for [persona] will result in [outcome], as measured by a [X%] change in [success metric]. I will protect [guardrail metric] and make a go/no-go decision after [decision window].
+- **Role, who you are solving for (from M2):** Fleet dispatcher (night-shift coordinator) at a mid-size 3PL. Reassigns routes and monitors driver progress.
+- **Goal, what this user is ultimately trying to achieve:** Keep route changes and stop statuses accurate so the drivers in the field and the dispatch board show the same reality.
+- **Friction / moment of misery, the specific pain blocking their goal:** "I reassign a route and the driver doesn't see it for ten, fifteen minutes. By then they've driven the wrong way." (UXR-02; BUG-2044, Critical). The board compounds it: "I can't trust the board." (UXR-09; BUG-2072, Medium).
+- **Current workaround, the external tool or manual process they rely on (M2):** A WhatsApp group that serves as the real system of record. Also direct messages to drivers, cross-checking the board against driver texts, and re-entering status by hand. The last two are inferred from the research and still need validation.
+- **Problem Hook, your one-sentence framing of the business crisis (M1):** We must solve the churn and slowing adoption by addressing the high number of features that frontline coordinators don't currently use or need, and focusing on optimizing the ones they do require for their day-to-day work.
+- **Value Proposition, the outcome your initiative promised to deliver (M1):** For frontline coordinators, we will optimize and simplify the platform because they are leaving us for competitors who are less complex.
 
-## Success metrics
+## Read your data snapshots
 
-| Metric | Type | Target | Why it matters |
-|---|---|---|---|
-| _North-star_ | | _____ | _____ |
-| _Leading indicator_ | | _____ | _____ |
-| _Guardrail_ | | _____ | _____ |
+- **Does the low adoption confirm your persona is burdened by tools they don't use? Note whether the low scheduling adoption (42%) for coordinators matches your M2 moment of misery.:** Yes because the story this could be telling is that there is a dropoff for shift scheduling for the coordinators due to the long time it takes for it to be reflected so they may be bypassing it altogether in favor of the workarounds. *Note: this is a hypothesis — the reason for the scheduling dropoff has not been validated and should be tested in interviews.*
+- **Does the workflow data match the manual process or hack you documented in M2? Note whether the specific drop-offs or time gaps explain why your persona avoids the digital tool.:** No it does not, the compliance isn't what I focused on. We focused on the next portion of the workflow which was shift handoffs taking a long time. *Note: the snapshot's "critical signal" states 69% abandon after Route Assignment, but the funnel actually shows a 23-point drop from Assign Routes (71%) to Compliance Checks (48%). The 69% is the cumulative drop from start to Shift Handoff (100% − 31%), not a single-step abandonment rate.*
+- **Look at the CSAT heatmap. Which specific cell most directly maps to your persona's friction? Note how the NPS trend justifies the urgency of your M1 Problem Hook.:** Core Dispatch (4.1) maps closest to the dispatcher persona's friction, since the night-shift coordinator's work — route assignment, shift handoff, and dispatch board monitoring — falls under that cluster. Scheduling (2.6) is weak, but it does not appear in the Module 2 research as a pain point for this persona, so the connection is not supported by the evidence. The NPS collapse from +18 to +12 confirms the urgency of the M1 Problem Hook: coordinators are increasingly dissatisfied, and 4 of 5 churned accounts cite complexity.
+
+## Step 3 · Craft your hypothesis
+
+- **Qualitative evidence (from M2), quote the specific friction / moment of misery for your persona:** "I reassign a route and the driver doesn't see it for ten, fifteen minutes… We keep a WhatsApp group as the real system." (UXR-02). "I can't trust the board." (UXR-09). Reassignment lag (BUG-2044) is qualitative-only — the snapshots do not measure it directly.
+- **Quantitative evidence (from M3), name the metric or data point that confirms the pain; cite the number:** Daily time lost to manual workarounds is 31 min, up from ~9 min two years ago (3.4×). Workflow gaps vs. benchmark sum to about 30 min: Compliance +11.6, Handoff +6.8, Report +6.7, Assign +4.2, Load +0.5. Coordinator NPS fell from +18 to +12.
+- **Persona, role, goal, and the friction you confirmed in the reconciliation steps:** Fleet dispatcher (night-shift coordinator) at a 3PL. Goal: finish the daily dispatch workflow accurately and on time. Confirmed friction: manual coordination time in route assignment and shift handoff. Reassignment lag (BUG-2044) is qualitatively confirmed but not measured in the snapshots.
+- **Problem you are solving, one sentence describing the specific friction this initiative removes:** Manual coordination around route assignment and shift handoff pushes coordinators out of the platform and into WhatsApp and re-entry.
+- **Strategic outcome, what behaviour change do you expect, and how does it map to retention / revenue / churn?:** Coordinators finish coordination inside the platform, which cuts lost time. The lost time is the stated reason for churn (4 of 5 accounts cite complexity), so recovering it should lift NPS and reduce churn.
+- **Primary success metric (initiative signal), the leading indicator that tells you the gap is closing:** Daily manual-workaround time per coordinator: 31 → 20 min (−35%). The 20 min is the midpoint between today and the 9-min baseline.
+- **Guardrail metric (product signal), the metric that must NOT drop; it protects your existing base:** Live Dispatch Board usage (91%), Route Optimizer usage (85%), and Core Dispatch CSAT (4.1) must not drop.
+- **Decision window, how much time or data before you scale, pivot, or kill? minimum threshold to proceed?:** 90 days, with a weekly readout. Go if time lost falls at least 35% and guardrails hold. Pivot if the reduction is under 15%. Kill if a guardrail drops.
+- **Draft your full hypothesis sentence, one to three sentences; quote the metric, name the persona, name the outcome:** Based on coordinators losing 31 minutes a day to manual workarounds (up from ~9 minutes two years ago) and the workflow gaps at compliance checks and shift handoff, I believe that moving route assignment and shift handoff fully into the platform for coordinators will result in cutting daily manual workaround time from 31 to about 20 minutes, as measured by a 35% reduction in that metric. I will protect Live Dispatch Board usage (91%), Route Optimizer usage (85%), and Core Dispatch CSAT (4.1), and will make a go/no-go decision after 90 days.
