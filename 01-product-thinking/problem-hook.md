@@ -42,9 +42,9 @@ _Read your hook back as a skeptical stakeholder. If you don't feel the urgency, 
 | Is the moment of misery systemic, or just an edge case? | Systemic problem. |
 | Does the value proposition actually remove the obstacle? | Yes, I think it does. |
 
-## 7. Finalized hypothesis _(complete in Module 3)_
+## 7. Finalized hypothesis _(completed in Module 3)_
 
-> Based on [qual + quant evidence], I believe that [solving X] for [persona] will result in [outcome], as measured by a [X%] change in [success metric]. I will protect [guardrail metric] and make a go/no-go decision after [decision window].
+> Based on coordinators losing 31 minutes a day to manual workarounds (up from ~9 minutes two years ago) and the workflow gaps at compliance checks and shift handoff, I believe that moving route assignment and shift handoff fully into the platform for coordinators will result in cutting daily manual workaround time from 31 to about 20 minutes, as measured by a 35% reduction in that metric. I will protect Live Dispatch Board usage (91%), Route Optimizer usage (85%), and Core Dispatch CSAT (4.1), and will make a go/no-go decision after 90 days.
 
 ## Link to full artifact
 
